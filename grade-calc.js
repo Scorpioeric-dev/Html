@@ -1,8 +1,8 @@
 //students score, total possible score
-
 let gradeCalc = function(score, totalScore) {
-  let studentScore = (score / totalScore) * 100;
+  const studentScore = (score / totalScore) * 100;
   let letterGrade = "";
+
   if (studentScore >= 90) {
     letterGrade = "A";
   } else if (studentScore >= 80) {
@@ -14,9 +14,9 @@ let gradeCalc = function(score, totalScore) {
   } else {
     letterGrade = "F";
   }
-  return `You got a ${letterGrade} ${studentScore} `;
+  return `You got a ${letterGrade} ${studentScore}% `;
 };
-let score1 = gradeCalc(40, 50);
+let score1 = gradeCalc(30, 50);
 console.log(score1);
 
 //15/20 -> 'You got a C (75%) !'
