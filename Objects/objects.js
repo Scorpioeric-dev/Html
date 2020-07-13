@@ -7,4 +7,4 @@ let convertFahrenheit = function (fahrenheit){
 }
 
 let temps = convertFahrenheit(90)
-console.log(temps)
+// console.log(temps)

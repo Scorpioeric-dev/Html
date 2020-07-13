@@ -14,7 +14,7 @@ let temp2 = convertFarenheitToCelsius(68)
 
 //Print the converted values
 
-console.log(temp)
-console.log(temp2)
+// console.log(temp)
+// console.log(temp2)
 
 

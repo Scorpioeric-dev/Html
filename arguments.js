@@ -22,6 +22,6 @@ let getTip = function(total,tipPercent = .2){
   return `A ${percent}% tip on $${total} would be $${tip}`
 }
 let tip = getTip(40,.25)
-console.log(tip)
+// console.log(tip)
 
 // total, tipPercent .2
