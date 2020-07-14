@@ -35,7 +35,7 @@ let getAccountSummary = (account) => {
 addIncome(myAccount,3000)
 addExpense(myAccount,500)
 addExpense(myAccount,750)
-console.log(getAccountSummary(myAccount))
+// console.log(getAccountSummary(myAccount))
 
 resetAccount(myAccount)
-console.log(getAccountSummary(myAccount))
+// console.log(getAccountSummary(myAccount))
