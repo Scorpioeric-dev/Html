@@ -4,8 +4,13 @@ const person = {
 }
 
 //Valid
-person.age(29)
+console.log(person.age)
 //Invalid
-person = {}
-
-console.log(isRaining)
+// person = {}
+let isRaining = {
+  rain: `It has been ${person.age} years since I saw my mom.`,
+  age:24,
+  name:'Avenger',
+  car:'Porsche'
+}
+console.log(`Wow ${isRaining.rain} I'm ${isRaining.age} years old now with a ${isRaining.car} and they call me ${isRaining.name}`)
