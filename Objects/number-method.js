@@ -13,7 +13,7 @@ let min = 0;
 let max = 20;
 let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 // 10-20
-console.log(randomNum);
+// console.log(randomNum);
 
 // Challenge guess random
 // 1-5 - true if correct - false if not correct
@@ -25,4 +25,4 @@ makeGuess = (guess) => {
     return guess === randomNum
 };
 
-console.log(makeGuess(2));
+// console.log(makeGuess(2));

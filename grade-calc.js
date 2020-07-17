@@ -1,5 +1,5 @@
 //students score, total possible score
-let gradeCalc = function(score, totalScore) {
+const gradeCalc = function(score, totalScore) {
   const studentScore = (score / totalScore) * 100;
   let letterGrade = "";
 
