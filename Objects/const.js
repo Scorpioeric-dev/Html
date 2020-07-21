@@ -4,7 +4,7 @@ const person = {
 }
 
 //Valid
-console.log(person.age)
+// console.log(person.age)
 //Invalid
 // person = {}
 let isRaining = {
@@ -13,9 +13,9 @@ let isRaining = {
   name:'Avenger',
   car:'Porsche'
 }
-console.log(`Wow ${isRaining.rain} I'm ${isRaining.age} years old now with a ${isRaining.car} and they call me ${isRaining.name}`)
+// console.log(`Wow ${isRaining.rain} I'm ${isRaining.age} years old now with a ${isRaining.car} and they call me ${isRaining.name}`)
 
 
 isRaining.name = 'juggle'
 
-console.log(isRaining.name)
+// console.log(isRaining.name)
