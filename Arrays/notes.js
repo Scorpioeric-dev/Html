@@ -1,10 +1,10 @@
 const notes = [
-  { title: "hello", body: "bye" },
-  { title: "me", body: 34 },
-  { title: "coding", body: "Enchilidas" },
+  { title: "javascript", body: "arrays" },
+  { title: "react", body: "hooks" },
+  { title: "node", body: "server" },
 ];
 
-console.log(notes);
+// console.log(notes);
 // notes.splice(1,1, 'hello')
 
 // notes[0] = "New Hello !";
@@ -26,16 +26,28 @@ console.log(notes);
 
 // console.log(notes.indexOf(false));
 
-// the find () methos allows me to target a specific query or search not based on index the lower case method gives me dynamic input useability by my user
-const findNote = function (notes, noteTitle) {
-  return notes.find(function (note, index) {
-    return note.title.toLowerCase() === noteTitle.toLowerCase();
-  });
+// the find () method allows me to target a specific query or search not based on index the lower case method gives me dynamic input useability by my user
+// const findNote = function (notes, noteTitle) {
+//   return notes.find(function (note, index) {
+//     return note.title.toLowerCase() === noteTitle.toLowerCase();
+//   });
+// };
+// console.log(notes)
+
+//How to make a search query to find a " " that has a portion of the string in an array
+const findNotes = (notes, query) => {
+  return notes.filter((note, index) => {
+    const titleMatch = note.title.toLowerCase().includes(query.toLowerCase());
+    const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase());
+    return titleMatch || isBodyMatch;
+  }); 
 };
+console.log(findNotes(notes,"javascript"));
 
 
-const note = findNote(notes, "ME");
-console.log(note);
+
+// const note = findNote(notes, "ME");
+// console.log(note);
 // console.log(notes.length);
 
 //FindIndex does the same

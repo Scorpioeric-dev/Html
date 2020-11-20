@@ -1,10 +1,10 @@
 //5 different things to do
 const todo = [
-  { text: "racecar", complete: true },
+  { text: "racecar", complete: false },
   { text: "shop for tuna", complete: true },
-  { text: "play xbox", complete: true },
+  { text: "play xbox", complete: false },
   { text: "go dancing", complete: true },
-  { text: "workout", complete: true },
+  { text: "workout", complete: false },
 ];
 
 // console.log(todo)
@@ -15,15 +15,24 @@ const todo = [
 
 //2.Create function to remove a todo by text value
 const deleteTodo = (todo, todoType) => {
-  const index = todo.findIndex((todos)=> {
+  const index = todo.findIndex((todos) => {
     return todos.text.toLowerCase() === todoType.toLowerCase();
   });
   if (index > -1) {
     todo.splice(index, 1);
   }
 };
-deleteTodo(todo, "go dancing");
-console.log(todo);
+
+// deleteTodo(todo, "go dancing");
+// console.log(todo);
+
+const getThingsToDo = (todo) => {
+ return todo.filter((todo) => {
+   return !todo.complete 
+ })
+}
+    
+console.log(getThingsToDo(todo));
 
 // console.log(todo[0].split(''))
 // todo.pop()
@@ -52,7 +61,7 @@ console.log(todo);
 // console.log(`Todo: ${todo[todo.length-2]}`)
 
 for (let count = 0; count <= 4; count++) {
-  console.log(todo[count])
+  // console.log(todo[count])
 }
 
 for (let count = todo.length - 1; count >= 0; count--) {
