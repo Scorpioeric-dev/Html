@@ -6,9 +6,22 @@ const todo = [
   { text: "go dancing", complete: true },
   { text: "workout", complete: false },
 ];
+//
 
-// console.log(todo)
-// console.log(todo)
+
+const sortTodo = (todo) => {
+  todo.sort((a, b) => {
+    if (!a.complete  && b.complete) {
+      return -1;
+    } else if (!b.complete && a.complete ) {
+      return 1;
+    } else {
+      return 0
+    }
+  });
+};
+sortTodo(todo)
+console.log(todo)
 //Challenge
 
 //1.Convert array to aray of objects -> text,complete
@@ -27,12 +40,12 @@ const deleteTodo = (todo, todoType) => {
 // console.log(todo);
 
 const getThingsToDo = (todo) => {
- return todo.filter((todo) => {
-   return !todo.complete 
- })
-}
-    
-console.log(getThingsToDo(todo));
+  return todo.filter((todo) => {
+    return !todo.complete;
+  });
+};
+
+// console.log(getThingsToDo(todo));
 
 // console.log(todo[0].split(''))
 // todo.pop()

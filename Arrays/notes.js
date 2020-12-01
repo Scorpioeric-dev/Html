@@ -34,17 +34,31 @@ const notes = [
 // };
 // console.log(notes)
 
-//How to make a search query to find a " " that has a portion of the string in an array
-const findNotes = (notes, query) => {
-  return notes.filter((note, index) => {
-    const titleMatch = note.title.toLowerCase().includes(query.toLowerCase());
-    const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase());
-    return titleMatch || isBodyMatch;
-  }); 
+const sortNotes = (notes) => {
+  notes.sort((a, b) => {
+    if (a.title.toLowerCase() < b.title.toLowerCase()) {
+      return -1;
+    } else if (b.title.toLowerCase() < a.title.toLowerCase()) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
-console.log(findNotes(notes,"javascript"));
+
+//
 
 
+
+//How to make a search query to find a " " that has a portion of the string in an array
+// const findNotes = (notes, query) => {
+//   return notes.filter((note, index) => {
+//     const titleMatch = note.title.toLowerCase().includes(query.toLowerCase());
+//     const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase());
+//     return titleMatch || isBodyMatch;
+//   });
+// };
+// console.log(findNotes(notes, "javascript"));
 
 // const note = findNote(notes, "ME");
 // console.log(note);
@@ -57,3 +71,7 @@ console.log(findNotes(notes,"javascript"));
 //   return note.faveFood === "Enchilidas";
 // });
 // console.log(index);
+
+
+sortNotes(notes)
+console.log(notes)
