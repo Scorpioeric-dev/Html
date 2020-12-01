@@ -30,7 +30,7 @@ const account = {
     });
 
     accountBalance = totalIncome - total
-    return `${account.name} has ${total} in expenses.${account.name} new balance is ${accountBalance}`;
+    return `${account.name} has $${total} in expenses. ${account.name} new balance is $${accountBalance}`;
   },
 };
 
@@ -46,7 +46,9 @@ const account = {
 account.addExpense("rent", 650);
 account.addExpense("Car Insurance", 110);
 account.addExpense("Revere", 50);
+account.addExpense("Hulu/HboMAX", 22);
 account.addExpense("Credit cards", 300);
+
 account.addIncome("Job", 2600);
 
 console.log(account.getAccountSummary());
