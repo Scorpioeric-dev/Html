@@ -44,10 +44,11 @@ const account = {
 //tweak getAccountSummary
 
 account.addExpense("rent", 650);
-account.addExpense("Car Insurance", 110);
+account.addExpense("Car Insurance", 173);
 account.addExpense("Revere", 50);
-account.addExpense("Hulu/HboMAX", 22);
-account.addExpense("Credit cards", 300);
+account.addExpense("Dog", 225);
+account.addExpense("Misc", 200);
+account.addExpense("Credit cards", 200);{/*Macy-BofA*/}
 
 account.addIncome("Job", 2600);
 

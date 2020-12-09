@@ -7,14 +7,15 @@ const todo = [
 ];
 
 
+
 //Access the button and makes the code run on console
 document.querySelector("button").addEventListener("click", () => {
-  console.log("Adding a todo item ");
+  console.log("Adding a todo item... ");
 });
 
 //Challenge target the button by id
 document.querySelector("#post_todo").addEventListener("click", (e) => {
-  console.log('The button to post a todo')
+  console.log("The button to post a todo");
 });
 
 //This filters out the todo with completed false ---
@@ -33,12 +34,11 @@ document.querySelector("body").appendChild(summary);
 
 //Takes each object within the array of objects and put it in a <p></p> tag grabbing the text key
 
-todo.forEach((todo)=>{
+todo.forEach((todo) => {
   const p = document.createElement("p");
-  p.textContent = todo.text
+  p.textContent = todo.text;
   document.querySelector("body").appendChild(p);
-
-})
+});
 
 const par = document.querySelectorAll("p");
 console.log(par);
@@ -54,3 +54,7 @@ par.forEach((p) => {
 
 //you have 2 todo left (p)
 //Add a p for each todo above (use text value)
+
+document.querySelector('#post-todo-text').addEventListener('input', (e) => {
+  console.log(e.target.value);
+});
