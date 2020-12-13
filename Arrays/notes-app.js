@@ -30,17 +30,20 @@ document.querySelector("#post_note").addEventListener("click", (e) => {
   e.target.textContent = "The button was clicked";
 });
 
-document.querySelector("#remove_notes").addEventListener("click", () => {
-  document.querySelectorAll(".note").forEach((note) => {
-    note.remove();
-    console.log("hit");
-  });
-});
+
 
 document.querySelector("#search-text").addEventListener("input", (e) => {
   filters.searchText = e.target.value;
   renderNotes(notes, filters);
 });
+
+document.querySelector("#name-form").addEventListener("submit", (e) => {
+  e.preventDefault()
+  console.log(e.target.elements.firstName.value)
+  e.target.elements.firstName.value
+  
+});
+
 //Query and remove
 
 // const p = document.querySelector('p')

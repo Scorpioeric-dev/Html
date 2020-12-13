@@ -9,16 +9,19 @@
   </head>
   <body>
     <h1>Hola Mundo!</h1>
-    <form>
+    <form id="name-form">
+      <input type='text' placeholder="First Name" name='firstName' />
+      <button>Submit</button>
+
       <h2>Take Note on Lesson</h2>
-      <input type='text' id='search-text' placeholder="filter-todos" />
+      <input type='text' id='search-text' placeholder="filter-notes" />
     </form>
     <div id='notes'>
 
 
     </div>
     <button id="post_note">Create a Note</button>
-    <button id="remove_notes">Remove All Notes</button>
+   
 
     <script src="./Arrays/notes-app.js"></script>
   </body>
