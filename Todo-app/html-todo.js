@@ -10,20 +10,35 @@ const todo = [
 //Setup a filter (searchtext) and wire up a new filter input to change it
 //create a render todo function to render and rerender the latest filtered data
 
-
 const filters = {
   searchTodo: "",
+  checkBoxTodo: false,
 };
 
 const renderTodo = (todo, filters) => {
-  const filteredTodo = todo.filter((todo) => {
-    return todo.text.toLowerCase().includes(filters.searchTodo.toLowerCase());
+  let filteredTodo = todo.filter((todo) => {
+    const searchText = todo.text.toLowerCase().includes(filters.searchTodo.toLowerCase());
+    const checkBoxTodo = !filters.checkBoxTodo || !todo.complete
+    return searchText && checkBoxTodo 
   });
+
+  // filteredTodo = filteredTodo.filter((todo) => {
+  //   return !filters.checkBoxTodo || !todo.complete
+    // if (filters.checkBoxTodo) {
+    //   return !todo.complete;
+      
+    // } else {
+    //   return true;
+    // }
+  // });
+
+
   const incompleteTodos = filteredTodo.filter((todo) => {
     return !todo.complete;
   });
+
   //Clears
-  document.querySelector("#todo").innerHTML = "";
+  document.querySelector("#checkbox-todo").innerHTML = "";
   //this variable creates a html element
   const summary = document.createElement("h2");
   //this put's content within the element
@@ -40,12 +55,10 @@ const renderTodo = (todo, filters) => {
 
 renderTodo(todo, filters);
 
-document.querySelector("#search-text").addEventListener('input',(e) => {
+document.querySelector("#search-text").addEventListener("input", (e) => {
   filters.searchTodo = e.target.value;
   renderTodo(todo, filters);
 });
-
-
 
 //Access the button and makes the code run on console
 document.querySelector("button").addEventListener("click", () => {
@@ -55,6 +68,13 @@ document.querySelector("button").addEventListener("click", () => {
 //Challenge target the button by id
 document.querySelector("#post_todo").addEventListener("click", (e) => {
   console.log("The button to post a todo");
+});
+
+//Acccess the checkbox
+
+document.querySelector("#checkbox-todo").addEventListener("change", (e) => {
+  filters.checkBoxTodo = e.target.checked;
+  renderTodo(todo, filters);
 });
 
 // const par = document.querySelectorAll("p");
@@ -68,3 +88,10 @@ document.querySelector("#post_todo").addEventListener("click", (e) => {
 //     p.remove();
 //   }
 // });
+
+//1. Create a checkbox and set up event listener -> " Hide Completed"
+
+//2.Create a new hideCompleted filter (default false )
+
+//3. Update hideCompleted an rerender list on checkBox change
+//4.Setup renderTodos to remove completed items
