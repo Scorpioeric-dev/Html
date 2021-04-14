@@ -1,8 +1,8 @@
-const notes = [
-  { title: "javascript", body: "arrays" },
-  { title: "react", body: "hooks" },
-  { title: "node", body: "server" },
-];
+// const notes = [
+//   { title: "javascript", body: "arrays" },
+//   { title: "react", body: "hooks" },
+//   { title: "node", body: "server" },
+// ];
 
 // console.log(notes);
 // notes.splice(1,1, 'hello')

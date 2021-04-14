@@ -1,14 +1,12 @@
-const todo = [
-  { text: "racecar", complete: false },
-  { text: "shop for tuna", complete: true },
-  { text: "play xbox", complete: false },
-  { text: "go dancing", complete: true },
-  { text: "workout", complete: false },
-];
 
-//Set up a Div contain for todos
-//Setup a filter (searchtext) and wire up a new filter input to change it
-//create a render todo function to render and rerender the latest filtered data
+let todo = [];
+
+const todoJSON = localStorage.getItem('todo')
+if(todoJSON !== null){
+  todo = JSON.parse(todoJSON)
+}
+
+
 
 const filters = {
   searchTodo: "",
@@ -22,14 +20,16 @@ const renderTodo = (todo, filters) => {
     return searchText && checkBoxTodo 
   });
 
+  //Checkbox logic to access the filtered todo list and search text option via a checkbox 
+  
   // filteredTodo = filteredTodo.filter((todo) => {
   //   return !filters.checkBoxTodo || !todo.complete
-    // if (filters.checkBoxTodo) {
-    //   return !todo.complete;
+  //   if (filters.checkBoxTodo) {
+  //     return !todo.complete;
       
-    // } else {
-    //   return true;
-    // }
+  //   } else {
+  //     return true;
+  //   }
   // });
 
 
@@ -38,7 +38,7 @@ const renderTodo = (todo, filters) => {
   });
 
   //Clears
-  document.querySelector("#checkbox-todo").innerHTML = "";
+  document.querySelector("#todo").innerHTML = "";
   //this variable creates a html element
   const summary = document.createElement("h2");
   //this put's content within the element
@@ -49,9 +49,9 @@ const renderTodo = (todo, filters) => {
   filteredTodo.forEach((todo) => {
     const p = document.createElement("p");
     p.textContent = todo.text;
-    document.querySelector("#todo").appendChild(p);
+    document.querySelector('#todo').appendChild(p);
   });
-};
+
 
 renderTodo(todo, filters);
 
@@ -61,14 +61,37 @@ document.querySelector("#search-text").addEventListener("input", (e) => {
 });
 
 //Access the button and makes the code run on console
-document.querySelector("button").addEventListener("click", () => {
-  console.log("Adding a todo item... ");
-});
+
+document.querySelector("button").addEventListener("submit", (e) => {
+ e.preventDefault()
+  todo.push({
+    text:e.target.elements.text.value,
+    complete:false
+  })
+  localStorage.setItem('todo',JSON.stringify(todo))
+  renderTodo(todo,filters)
+  e.target.elements.text.value= " "
+  
+ });
+
 
 //Challenge target the button by id
-document.querySelector("#post_todo").addEventListener("click", (e) => {
-  console.log("The button to post a todo");
+document.querySelector("#post_todo-text").addEventListener("submit", (e) => {
+  e.preventDefault()
+  todo.push({
+    text:e.target.elements.text.value,
+    complete:false
+  })
+  localStorage.setItem('todo',JSON.stringify(todo))
+  renderTodo(todo,filters)
+  e.target.elements.text.value = ''
 });
+
+
+
+
+
+
 
 //Acccess the checkbox
 
@@ -94,4 +117,5 @@ document.querySelector("#checkbox-todo").addEventListener("change", (e) => {
 //2.Create a new hideCompleted filter (default false )
 
 //3. Update hideCompleted an rerender list on checkBox change
-//4.Setup renderTodos to remove completed items
+//4.Setup renderTodos to remove completed 
+}

@@ -12,12 +12,18 @@
 
     <h2>Take Note on Lesson</h2>
     <input type="text" id="search-text" placeholder="filter-notes" />
-
+<select id="filter-by">
+  <option value='byEdited'>Sort by last edited</option>
+  <option value='byCreated'>Sort by recently created</option>
+  <option value='alphabetical'>Sort Alphabetically</option>
+</select>
     <div id="notes"></div>
     <button id="post_note">Create a Note</button>
     <label>
       <input id="for-fun" type="checkbox" /> Check me for fun
     </label>
-    <script src="./Arrays/notes-app.js"></script>
+
+    <script src="../Notes-app/notes-app.js"></script>
+    <script src="../Notes-app/notes-function.js"></script>
   </body>
 </html>
